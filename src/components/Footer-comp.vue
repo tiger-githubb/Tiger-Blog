@@ -1,0 +1,172 @@
+<template>
+  <footer>
+    <div class="container">
+      <div class="left">
+        <div class="col-1">
+          <router-link class="header" :to="{ name: 'Home' }">Blog</router-link>
+          <ul>
+            <li>
+              <a href="#"><font-awesome-icon class="svg-icon" icon="fa-brands fa-square-youtube" /></a>
+            </li>
+            <li>
+              <a href="#"><font-awesome-icon class="svg-icon" icon="fa-brands fa-square-twitter" /></a>
+            </li>
+            <li>
+              <a href="#"><font-awesome-icon class="svg-icon" icon="fa-brands fa-square-instagram" /></a>
+            </li>
+            <li>
+              <a href="#"><font-awesome-icon class="svg-icon" icon="fa-brands fa-linkedin" /></a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-2">
+          <ul>
+            <router-link class="footer-link" :to="{ name: 'Home' }">Acceuil</router-link>
+            <router-link class="footer-link" :to="{ name: 'Blogs' }">Blogs</router-link>
+            <router-link v-if="admin" class="footer-link" :to="{ name: 'CreatePost' }">Nouveau poste</router-link>
+            <router-link v-if="!user" class="footer-link" :to="{ name: 'Login' }">Connexion / enregistrement</router-link>
+          </ul>
+        </div>
+      </div>
+      <div class="right">
+        <p>Blog.Créé 2022.</p>
+      </div>
+    </div>
+  </footer>
+</template>
+
+<script>
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faSquareYoutube, faSquareTwitter, faSquareInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+library.add([faSquareYoutube, faSquareTwitter, faSquareInstagram, faLinkedin]);
+
+export default {
+  name: "footer-vue",
+  computed: {
+    user() {
+      return this.$store.state.user;
+    },
+    admin() {
+      return this.$store.state.profileAdmin;
+    }
+  }
+};
+</script>
+
+<style lang="scss" scoped>
+footer {
+  margin-top: auto;
+  padding: 100px 25px;
+  background-color: #303030;
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    @media (min-width: 800px) {
+      flex-direction: row;
+      gap: 0px;
+    }
+
+    > div {
+      display: flex;
+      flex: 1;
+    }
+
+    .left {
+      gap: 32px;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @media (min-width: 800px) {
+        flex-direction: row;
+        align-items: initial;
+        gap: 0px;
+      }
+
+      .header {
+        text-align: center;
+        font-size: 24px;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        @media (min-width: 800px) {
+          text-align: initial;
+        }
+      }
+      ul {
+        gap: 16px;
+        list-style: none;
+        display: flex;
+      }
+
+      .col-1,
+      .col-2 {
+        gap: 32px;
+        display: flex;
+        flex: 1;
+        @media (min-width: 800px) {
+          gap: 0;
+        }
+      }
+
+      .col-1 {
+        flex-direction: column;
+
+        h2 {
+          text-align: center;
+          @media (min-width: 800px) {
+            text-align: initial;
+          }
+        }
+        ul {
+          margin-top: auto;
+
+          li {
+            display: flex;
+            align-items: center;
+            .svg-icon {
+              width: 24px;
+              height: auto;
+              color: white;
+            }
+          }
+        }
+      }
+
+      col-2 {
+        ul {
+          height: 100%;
+          justify-content: center;
+          flex-direction: row;
+          flex-wrap: wrap;
+          @media (min-width: 800px) {
+            flex-direction: column;
+          }
+          .link {
+            font-size: 16px;
+            font-weight: 500;
+            color: white;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    .right {
+      gap: 32px;
+      color: white;
+      align-items: center;
+      flex-direction: column;
+      @media (min-width: 800px) {
+        align-items: flex-end;
+        gap: 0;
+      }
+    }
+
+    p {
+        margin-top: auto;
+    }
+  }
+}
+</style>
