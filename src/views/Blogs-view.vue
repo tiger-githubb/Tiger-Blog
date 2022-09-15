@@ -2,7 +2,7 @@
   <div class="blog-card-wrap">
     <div class="blog-cards container">
       <div class="toggle-edit">
-        <span>Modifier le mode des messages</span>
+        <span :disabled="!user">Modifier les articles du blog (admin)</span>
         <input :disabled="!user" type="checkbox" v-model="editPost" />
       </div>
       <BlogCard

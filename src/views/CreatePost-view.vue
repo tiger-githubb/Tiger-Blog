@@ -7,7 +7,7 @@
             <p><span>Error:</span>{{ errorMsg }}</p>
         </div>
         <div class="blog-info">
-            <input type="text" placeholder="Въведете заглавие" v-model="blogTitle">
+            <input type="text" placeholder="Entrez un titre" v-model="blogTitle">
             <div class="upload-file">
                 <label for="blog-photo">Télécharger une photo de couverture de blog</label>
                 <input 
@@ -84,9 +84,9 @@ export default {
         },
         uploadBlog() {
             if(this.blogTitle.length == 0 || this.blogHTML.length == 0) {
-                this.setErrorMessage('Не сте попълнили нищо в заглавието и/или в тялото на поста.', 4000);
+                this.setErrorMessage('Vous n avez rien terminé dans le titre et ou dans le corps du poste.', 4000);
             } else if(!this.file) {
-                this.setErrorMessage('Не сте прикачили файл за корица на поста.', 4000);
+                this.setErrorMessage(' Vous n avez pas joint de fichier à la couverture du message. ', 4000);
             } else {
                 this.error = false;
                 this.loading = true;

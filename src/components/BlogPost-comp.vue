@@ -8,8 +8,8 @@
         <p v-if="post.welcomeScreen">{{ post.blogPost }}</p>
         <p v-else class="content-preview" v-html="post.blogHTML"></p>
 
-        <router-link v-if="post.welcomeScreen" class="link" :to="{ name: 'Register' }">
-          Connexion / enregistrement<img class="arrow" src="../assets/right-arrow.png" alt="">
+        <router-link v-if="post.welcomeScreen" class="link" :to="{ name: 'Blogs' }">
+          Voir les articles <img class="arrow" src="../assets/right-arrow.png" alt="">
         </router-link>
         <router-link v-else class="link" :to="{ name: 'ViewBlog', params: { blogid: this.post.blogId } }">
           Voir le post <img class="arrow" src="../assets/right-arrow.png" alt="">
@@ -46,7 +46,7 @@ export default {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   @media (min-width: 700px) {
     min-height: 650px;
-    max-height: 650px;
+    max-height: 400px !important;
     flex-direction: row;
   }
 

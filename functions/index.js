@@ -14,7 +14,7 @@ exports.addAdminRole = functions.https.onCall((data) => {
         })
         .then(() => {
             return {
-                message: `Потребител с и-мейл ${data.email} е успешно добавен като администратор.`
+                message: `Utilisateur avec e-mail ${data.email} a été ajouté avec succès en tant qu'administrateur.`
             }
         })
         .catch((err) => {

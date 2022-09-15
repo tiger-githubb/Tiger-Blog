@@ -27,6 +27,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+    *{
+        background-color: red($color: #000000);
+    }
 .modal {
     top: 0;
     background-color: rgba(0, 0, 0, 0.5);

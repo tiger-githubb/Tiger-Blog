@@ -2,16 +2,14 @@
   <header>
     <nav class="container">
       <div class="branding">
-        <router-link class="header" :to="{ name: 'Home' }"
-          >Blog</router-link
-        >
+        <router-link class="header" :to="{ name: 'Home' }"> TigerdevBlog </router-link>
       </div>
       <div class="nav-links">
         <ul v-show="!mobile">
           <router-link class="link" :to="{ name: 'Home' }">Acceuil</router-link>
-          <router-link class="link" :to="{ name: 'Blogs' }">Blogs</router-link>
-          <router-link v-if="admin" class="link" :to="{ name: 'CreatePost' }">Rédiger un post</router-link>
-          <router-link v-if="!user" class="link" :to="{ name: 'Login' }">Connexion / enregistrement</router-link>
+          <router-link class="link" :to="{ name: 'Blogs' }">Blog</router-link>
+          <router-link v-if="user" class="link" :to="{ name: 'CreatePost' }">Rédiger un Article </router-link>
+          <router-link v-if="!user" class="link" :to="{ name: 'Login' }">Connexion</router-link>
         </ul>
         <div v-if="user" @click="toggleProfileMenu" class="profile" ref="profile">
           <span>{{ this.$store.state.profileInitials }}</span>
@@ -33,7 +31,7 @@
                 </router-link>
               </div>
 
-              <div v-if="admin" class="option">
+              <div v-if="user" class="option">
                 <router-link class="option" :to="{ name: 'Admin' }">
                   <font-awesome-icon class="icon" icon="fa-solid fa-screwdriver-wrench" />
                   <p>Administration</p>
@@ -42,7 +40,7 @@
 
               <div @click="signOut" class="option">
                 <font-awesome-icon class="icon" icon="fa-solid fa-right-from-bracket" />
-                <p>Production</p>
+                <p>Déconnexion</p>
               </div>
 
             </div>
@@ -53,10 +51,10 @@
     <font-awesome-icon @click="toggleMobileNav" v-show="mobile" class="menu-icon" icon="fa-solid fa-bars" />
     <Transition name="mobile-nav">
       <ul v-show="mobileNav" class="mobile-nav">
-        <router-link class="link" :to="{ name: 'Home' }">Début </router-link>
-        <router-link class="link" :to="{ name: 'Blogs' }">Blogs</router-link>
-        <router-link v-if="admin" class="link" :to="{ name: 'CreatePost' }">Rédiger un post</router-link>
-        <router-link v-if="!user" class="link" :to="{ name: 'Login' }">Connexion / enregistrement</router-link>
+        <router-link class="link" :to="{ name: 'Home' }">Acceuil </router-link>
+        <router-link class="link" :to="{ name: 'Blogs' }">Blog</router-link>
+        <router-link v-if="user" class="link" :to="{ name: 'CreatePost' }">Rédiger un post</router-link>
+        <router-link v-if="!user" class="link" :to="{ name: 'Login' }">Connexion</router-link>
       </ul>
     </Transition>
   </header>
@@ -125,7 +123,7 @@ export default {
 header {
   background-color: #fff;
   padding: 0 25px;
-  box-shadow: 0 4px 6px -1px black, 0 2px 4px -1px black;
+  box-shadow: 0 4px 6px -1px rgba(44, 44, 44, 0.322), 0 2px 4px -1px rgba(85, 85, 85, 0.199);
   z-index: 99;
 
   .link {
@@ -262,13 +260,13 @@ header {
     cursor: pointer;
     position: absolute;
     top: 32px;
-    right: 25px;
-    height: 25px;
+    right: 85px;
+    height: 30px;
     width: auto;
   }
 
   .mobile-nav {
-    padding: 20px;
+    padding: 30px;
     width: 70%;
     max-width: 250px;
     display: flex;

@@ -1,10 +1,10 @@
 <template>
   <div class="home">
-    <BlogPost v-if="!user" :post="welcomeScreen" />
+    <BlogPost v-if="!user || user" :post="welcomeScreen" />
     <BlogPost :post="post" v-for="(post, index) in blogPostsFeed" :key="index" />
     <div class="blog-card-wrap">
       <div class="container">
-        <h3>Voir les messages plus récents</h3>
+        <h3>Voir les articles les plus recents </h3>
         <div class="blog-cards">
           <BlogCard :post="card" v-for="(card, index) in blogPostCards" :key="index"/>
         </div>
@@ -32,7 +32,7 @@ export default {
     return {
       welcomeScreen: {
         title: 'Acceuil',
-        blogPost: 'Articles de blog hebdomadaires pour toutes les choses de la programmation, y compris HTML, CSS, JavaScript et plus encore.',
+        blogPost: "Je m'appelle Aristide et je suis développeur web ainsi que gérant d'une agence web spécialisée dans le développement web. Sur cet site , je souhaite partager des astuces et retours d'expériences qui seront utiles à tous les développeurs... ",
         welcomeScreen: true,
         photo: 'coding'
       }

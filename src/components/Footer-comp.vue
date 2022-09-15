@@ -23,7 +23,7 @@
           <ul>
             <router-link class="footer-link" :to="{ name: 'Home' }">Acceuil</router-link>
             <router-link class="footer-link" :to="{ name: 'Blogs' }">Blogs</router-link>
-            <router-link v-if="admin" class="footer-link" :to="{ name: 'CreatePost' }">Nouveau poste</router-link>
+            <router-link v-if="user" class="footer-link" :to="{ name: 'CreatePost' }">Nouvel article</router-link>
             <router-link v-if="!user" class="footer-link" :to="{ name: 'Login' }">Connexion / enregistrement</router-link>
           </ul>
         </div>
