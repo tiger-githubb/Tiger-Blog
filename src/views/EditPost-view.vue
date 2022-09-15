@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
   <div class="create-post">
     <BlogCoverPreview v-show="this.$store.state.blogPhotoPreview" />

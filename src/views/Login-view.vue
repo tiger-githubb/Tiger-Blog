@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
   <div class="form-wrap">
     <form class="login">
