@@ -93,7 +93,7 @@ export default {
             const dataBase = await db.collection('blogPosts').doc(this.routeId);
             
             if(this.blogTitle.length == 0 || this.blogHTML.length == 0) {
-                this.setErrorMessage('Не сте попълнили нищо в заглавието и/или в тялото на поста.', 4000);
+                this.setErrorMessage("Vous n'avez rien terminé dans le titre et / ou dans le corps du poste.", 4000);
             } else {
                 this.error = false;
                 this.loading = true;

@@ -2,7 +2,7 @@
   <div class="post-view" v-if="currentBlog">
     <div class="container quillWrapper">
         <h2>{{ this.currentBlog[0].blogTitle }}</h2>
-        <h4>Sorti le:{{new Date(this.currentBlog[0].blogDate).toLocaleString('bg-bg')}}</h4>
+        <h4>Sorti le:{{new Date(this.currentBlog[0].blogDate).toLocaleString('fr-FR')}}</h4>
         <img :src="this.currentBlog[0].blogCoverPhoto" alt="Cover Photo">
         <div class="post-content ql-editor" v-html="this.currentBlog[0].blogHTML">
 
