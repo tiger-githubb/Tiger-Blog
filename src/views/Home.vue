@@ -34,7 +34,7 @@ export default {
         title: 'Acceuil',
         blogPost: "Je m'appelle Aristide et je suis développeur web ainsi que gérant d'une agence web spécialisée dans le développement web. Sur cet site , je souhaite partager des astuces et retours d'expériences qui seront utiles à tous les développeurs... ",
         welcomeScreen: true,
-        photo: 'coding'
+        photo: 'beautiful-stories'
       }
     };
   },
