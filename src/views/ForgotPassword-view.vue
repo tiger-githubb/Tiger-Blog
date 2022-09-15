@@ -58,7 +58,7 @@ export default {
                 .auth()
                 .sendPasswordResetEmail(this.email)
                 .then(() => {
-                    this.modalMessage = 'Ако имате регистриран акаунт, ще получите поща.';
+                    this.modalMessage = 'Si vous avez un compte enregistré, vous recevrez un courrier.';
                     this.loading = false;
                     this.modalActive = true;
                 })

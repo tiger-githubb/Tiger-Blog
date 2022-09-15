@@ -3,7 +3,7 @@
     <div class="container">
       <div class="left">
         <div class="col-1">
-          <router-link class="header" :to="{ name: 'Home' }">Blog</router-link>
+          <router-link class="header" :to="{ name: 'Home' }">TigerdevBlog</router-link>
           <ul>
             <li>
               <a href="#"><font-awesome-icon class="svg-icon" icon="fa-brands fa-square-youtube" /></a>
@@ -23,13 +23,13 @@
           <ul>
             <router-link class="footer-link" :to="{ name: 'Home' }">Acceuil</router-link>
             <router-link class="footer-link" :to="{ name: 'Blogs' }">Blogs</router-link>
-            <router-link v-if="user" class="footer-link" :to="{ name: 'CreatePost' }">Nouvel article</router-link>
-            <router-link v-if="!user" class="footer-link" :to="{ name: 'Login' }">Connexion / enregistrement</router-link>
+            <router-link v-if="user" class="footer-link" :to="{ name: 'CreatePost' }">Ajouter un article</router-link>
+            <router-link v-if="!user" class="footer-link" :to="{ name: 'Login' }">Connexion</router-link>
           </ul>
         </div>
       </div>
       <div class="right">
-        <p>Blog.Créé 2022.</p>
+        <p>© Tiger Dev, All Right Reserved.</p>
       </div>
     </div>
   </footer>
@@ -54,6 +54,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.footer-link:hover  {
+color: #AAA;
+}
 footer {
   margin-top: auto;
   padding: 100px 25px;

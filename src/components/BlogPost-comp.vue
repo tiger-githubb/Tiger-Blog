@@ -5,15 +5,16 @@
         <h2 v-if="post.welcomeScreen">{{ post.title }}</h2>
         <h2 v-else>{{ post.blogTitle }}</h2>
 
+        <h6 v-if="post.welcomeScreen" ></h6>
+        <h6 v-else>Le {{ new Date(post.blogDate).toLocaleString('fr-fr') }}</h6>
+
         <p v-if="post.welcomeScreen">{{ post.blogPost }}</p>
         <p v-else class="content-preview" v-html="post.blogHTML"></p>
 
         <router-link v-if="post.welcomeScreen" class="link" :to="{ name: 'Blogs' }">
           Voir les articles <img class="arrow" src="../assets/right-arrow.png" alt="">
         </router-link>
-        <router-link v-else class="link" :to="{ name: 'ViewBlog', params: { blogid: this.post.blogId } }">
-          Voir le post <img class="arrow" src="../assets/right-arrow.png" alt="">
-        </router-link>
+        <router-link v-else class="link" :to="{ name: 'ViewBlog', params: { blogid: this.post.blogId } }">Voir le post <img class="arrow" src="../assets/right-arrow.png" alt=""> </router-link>
       </div>
     </div>
     <div class="blog-photo">
