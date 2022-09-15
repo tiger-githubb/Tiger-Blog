@@ -42,6 +42,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 import BlogCoverPreview from '../components/BlogCoverPreview-comp.vue';
 import Loading from '../components/Loading-comp.vue';
 
