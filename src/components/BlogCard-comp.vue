@@ -13,7 +13,7 @@
       <h4>{{ post.blogTitle }}</h4>
       <h6>Placé sur{{ new Date(post.blogDate).toLocaleString('bg-bg') }}</h6>
       <router-link class="link" :to="{ name: 'ViewBlog', params: { blogid: this.post.blogId } }"
-        >Voir le post <font-awesome-icon class="arrow" icon="fa-solid fa-right-long" /></router-link>
+        >Voir le post<font-awesome-icon class="arrow" icon="fa-solid fa-right-long" /></router-link>
     </div>
   </div>
 </template>
